@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Attendee List</title>
+</head>
+<body>
+<div align="center">
+    <h1>Attendee List</h1>
+    <a href="/add">Add new attendee</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Phone Number</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="attendee : ${attendees}">
+            <td th:text="${attendee.phoneNr}">Phone Number</td>
+            <td th:text="${attendee.name}">Name</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
